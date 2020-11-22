@@ -1,4 +1,5 @@
 pipeline {
+  String credentialsId = 'awsCredentials'
   agent {
     docker {
       image 'goforgold/build-container:latest'
