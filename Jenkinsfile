@@ -1,4 +1,3 @@
-String credentialsId = 'awsCredentials'
 pipeline {
   
   agent {
@@ -14,7 +13,8 @@ pipeline {
     }
    stage('Create Packer AMI') {
         steps {
-          withCredentials([usernamePassword(credentialsId: 'awsCredentials', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) 
+          withCredentials([
+            usernamePassword(credentialsId: 'awsCredentials', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY')
           ]) {
             sh 'packer build -var aws_access_key=${AWS_KEY} -var aws_secret_key=${AWS_SECRET} packer/packer.json'
         }
