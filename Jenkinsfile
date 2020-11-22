@@ -26,7 +26,7 @@ pipeline {
             usernamePassword(credentialsId: '2facaea2-613b-4f34-9fb7-1dc2daf25c45', passwordVariable: 'REPO_PASS', usernameVariable: 'REPO_USER'),
           ]) {
             sh 'rm -rf node-app-terraform'
-            sh 'git clone https://github.com/goforgold/node-app-terraform.git'
+            sh 'git clone https://github.com/sunpyopark/node-app-terraform.git'
             sh '''
                cd node-app-terraform
                terraform init
