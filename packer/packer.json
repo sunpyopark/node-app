@@ -36,7 +36,7 @@
     "source_ami_filter": {
       "filters": {
         "virtualization-type": "hvm",
-        "source_ami": "ami-0a10b2721688ce9d2",
+        name = "ubuntu/images/\*ubuntu-xenial-16.04-amd64-server-\*"
         "root-device-type": "ebs"
       },
       "owners": ["099720109477"],
