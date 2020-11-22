@@ -14,9 +14,9 @@ pipeline {
    stage('Create Packer AMI') {
         steps {
           withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials', variable: 'AWS_ACCESS_KEY_ID']]) {
-            sh 'packer build -var aws_access_key=${env.AWS_ACCESS_KEY_ID} -var aws_secret_key=${env.AWS_SECRET_ACCESS_KEY} packer/packer.json'   
+            sh 'packer build -var accessKeyVariable=${env.AWS_ACCESS_KEY_ID} -var secretKeyVariable=${env.AWS_SECRET_ACCESS_KEY} packer/packer.json'   
             sh "echo this is ${env.AWS_ACCESS_KEY_ID}"
-               sh "echo this is ${env.AWS_SECRET_ACCESS_KEY}"
+            sh "echo this is ${env.AWS_SECRET_ACCESS_KEY}"
        }
       }
     }
