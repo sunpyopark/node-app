@@ -34,7 +34,7 @@
     - name: PM2 startup configuration (pm2 start)
       command: pm2 start bin/www --name="node-app"
       args:
-        chdir: /var/lib/jenkins/workspace/node-app-terraform/
+        chdir: /home/ubuntu/node-app/
 
     - name: PM2 startup configuration (pm2 save)
       command: pm2 save
